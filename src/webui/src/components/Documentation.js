@@ -4,173 +4,51 @@ import {CodeHighlight} from './CodeHighlight';
 export const Documentation = () => {
 
     return (
-        < div
-    className = "p-grid" >
-        < div
-    className = "p-col-12" >
-        < div
-    className = "card docs" >
-        < h4 > Current
-    Version < /h4>
-    < p > React
-    17.
-    x
-    and
-    PrimeReact
-    6.
-    x < /p>
+        <div className="p-grid">
+            <div className="p-col-12">
+                <div className="card docs">
+                    <h4>Current Version</h4>
+                    <p>React 17.x and PrimeReact 6.x</p>
 
-    < h4 > Getting
-    Started < /h4>
-    < p > Sigma
-    is
-    an
-    application
-    template
-    for React based
-    on
-    the
-    popular < a
-    href = "https://github.com/facebookincubator/create-react-app" > create - react - app < /a> that allows
-    creating
-    React
-    apps
-    with no configuration.To
-    get
-    started, clone
-    the < a
-    href = "https://github.com/primefaces/sigma-react" > repository < /a> from GitHub and install the dependencies with npm or yarn.</
-    p >
-    < CodeHighlight >
-    {`
+                    <h4>Getting Started</h4>
+                    <p>Sigma is an application template for React based on the popular <a href="https://github.com/facebookincubator/create-react-app">create-react-app</a> that allows
+                        creating React apps with no configuration. To get started, clone the <a href="https://github.com/primefaces/sigma-react">repository</a> from GitHub and install the dependencies with npm or yarn.</p>
+                    <CodeHighlight>
+                        {`
 "npm install" or "yarn"
-`
-}
-<
-    /CodeHighlight>
+`}
+                    </CodeHighlight>
 
-    < p > Next
-    step
-    is
-    running
-    the
-    application
-    using
-    the
-    start
-    script
-    and
-    navigate
-    to < b > http
-://localhost:3000/</b> to view the application.
-    That
-    is
-    it, you
-    may
-    now
-    start
-    with the development
-    of
-    your
-    application
-    using
-    the
-    Sigma
-    template. < /p>
+                    <p>Next step is running the application using the start script and navigate to <b>http://localhost:3000/</b> to view the application.
+                        That is it, you may now start with the development of your application using the Sigma template.</p>
 
-    < CodeHighlight >
-    {`
+                    <CodeHighlight>
+                        {`
 "npm start" or "yarn start"
-`
-}
-<
-    /CodeHighlight>
+`}
+                    </CodeHighlight>
 
-    < h4 > React
-    Scripts < /h4>
-    < p > Following
-    commands
-    are
-    derived
-    from
-    create - app - app. < /p>
-    < CodeHighlight >
-    {`
+                    <h4>React Scripts</h4>
+                    <p>Following commands are derived from create-app-app.</p>
+                    <CodeHighlight>
+                        {`
 "npm start" or "yarn start": Starts the development server
 "npm test" or "yarn test": Runs the tests.
 "npm run build" or "yarn run build": Creates a production build.
-`
-}
-<
-    /CodeHighlight>
+`}
+                    </CodeHighlight>
 
-    < h4 > Structure < /h4>
-    < p > Sigma
-    consists
-    of
-    2
-    main
-    parts;
-    the
-    application
-    layout
-    and
-    the
-    resources. < b > App.js < /b> inside src folder is the main component containing the template for the base layout
-    whereas
-    required
-    resources
-    such as SASS
-    structure
-    for the layout
-    are
-    placed
-    inside
-    the < b > src / layout < /b> folder.</
-    p >
+                    <h4>Structure</h4>
+                    <p>Sigma consists of 2 main parts; the application layout and the resources. <b>App.js</b> inside src folder is the main component containing the template for the base layout
+                        whereas required resources such as SASS structure for the layout are placed inside the <b>src/layout</b> folder.</p>
 
-    < h4 > Template < /h4>
-    < p > Main
-    layout
-    is
-    the
-    JSX
-    template
-    of
-    the
-    App.js, it
-    is
-    divided
-    into
-    a
-    couple
-    of
-    child
-    components
-    such as topbar, profile, menu
-    and
-    footer.Here
-    is
-    render
-    method
-    of
-    the
-    App.js
-    component
-    that
-    implements
-    the
-    logic
-    such as menu
-    state, layout
-    modes
-    and
-    so
-    on.
-    < /p>
+                    <h4>Template</h4>
+                    <p>Main layout is the JSX template of the App.js, it is divided into a couple of child components such as topbar, profile, menu and footer. Here is render method of the
+                        App.js component that implements the logic such as menu state, layout modes and so on.
+                    </p>
 
-    < CodeHighlight >
-    {`
+                    <CodeHighlight>
+                        {`
 <div className={wrapperClass} onClick={onWrapperClick}>
     <AppTopbar onToggleMenu={onToggleMenu} />
 
@@ -220,67 +98,16 @@ export const Documentation = () => {
     <AppFooter />
 
 </div>
-`
-}
-<
-    /CodeHighlight>
+`}
+                    </CodeHighlight>
 
-    < h4 > Menu < /h4>
-    < p > Menu
-    is
-    a
-    separate
-    component
-    defined in AppMenu.js
-    file
-    based
-    on
-    PrimeReact
-    MenuModel
-    API.In
-    order
-    to
-    define
-    the
-    menuitems,
-        navigate
-    to
-    createMenu()
-    method
-    App.js
-    file
-    and
-    define
-    your
-    own
-    model as a
-    nested
-    structure.Here
-    is
-    the
-    menu
-    component
-    from
-    the
-    demo
-    application.Notice
-    that
-    menu
-    object
-    is
-    bound
-    to
-    the
-    model
-    property
-    of
-    AppMenu
-    component as shown
-    above. < /p>
+                    <h4>Menu</h4>
+                    <p>Menu is a separate component defined in AppMenu.js file based on PrimeReact MenuModel API. In order to define the menuitems,
+                        navigate to createMenu() method App.js file and define your own model as a nested structure. Here is the menu component from the demo application.
+                        Notice that menu object is bound to the model property of AppMenu component as shown above.</p>
 
-    < CodeHighlight
-    lang = "js" >
-        {`
+                    <CodeHighlight lang="js">
+                        {`
 const menu = [
     { label: 'Dashboard', icon: 'pi pi-fw pi-home', to: '/' },
     {
@@ -372,91 +199,30 @@ const menu = [
     { label: 'View Source', icon: 'pi pi-fw pi-search', command: () => { window.location = "https://github.com/primefaces/sigma-react" } }
 ];
 
-`
-}
-<
-    /CodeHighlight>
+`}
+                    </CodeHighlight>
 
-    < p > Dependencies
-    of
-    Sigma
-    are
-    listed
-    below
-    and
-    needs
-    to
-    be
-    added
-    to
-    package.json.Only
-    required
-    dependency
-    is
-    PrimeReact
-    where
-    optional
-    dependencies
-    exist
-    to
-    enable
-    certain
-    components in PrimeReact. < /p>
+                    <p>Dependencies of Sigma are listed below and needs to be added to package.json. Only required
+                        dependency is PrimeReact where optional dependencies exist to enable certain components in PrimeReact.</p>
 
-    < CodeHighlight
-    lang = "js" >
-        {`
+                    <CodeHighlight lang="js">
+                        {`
 "primereact": "...",                //required: PrimeReact components
 "primeicons": "..."                  //required: Icons
-`
-}
-<
-    /CodeHighlight>
+`}
+                    </CodeHighlight>
 
-    < h4 > Saga
-    Theme < /h4>
-    < p > Sigma
-    uses
-    the
-    free
-    Saga - Blue
-    theme
-    of
-    PrimeReact
-    which
-    is
-    a
-    free
-    theme
-    distributed
-    within
-    PrimeReact, however
-    it
-    can
-    be
-    used
-    with any PrimeReact
-    theme. < /p>
+                    <h4>Saga Theme</h4>
+                    <p>Sigma uses the free Saga-Blue theme of PrimeReact which is a free theme distributed within PrimeReact, however it can be used with any PrimeReact theme.</p>
 
-    < h4 > SASS
-    Variables < /h4>
-    < p > In
-case
-    you
-    'd like to customize the layout variables, open _variables.scss file under src/layout folder. Saving the changes
-    will
-    be
-    reflected
-    instantly
-    at
-    your
-    browser.
-    < /p>
+                    <h4>SASS Variables</h4>
+                    <p>In case you'd like to customize the layout variables, open _variables.scss file under src/layout folder. Saving the changes
+                        will be reflected instantly at your browser.
+                    </p>
 
-    < h5 > src / layout / _variables.scss < /h5>
-    < CodeHighlight
-    lang = "scss" >
-        {`
+                    <h5>src/layout/_variables.scss</h5>
+                    <CodeHighlight lang="scss">
+                        {`
 /* General */
 $fontSize:14px;
 $bodyBgColor:#edf0f5;
@@ -504,219 +270,55 @@ $topbarSearchInputColor:#ffffff;
 
 /* Footer */
 $footerBgColor:#ffffff;
-`
-}
-<
-    /CodeHighlight>
+`}
+                    </CodeHighlight>
 
-    < h4 > Menu
-    Modes < /h4>
-    < p > Menu
-    has
-    2
-    modes, static
-    and
-    overlay.Main
-    layout
-    container
-    element in App.js
-    is
-    used
-    to
-    define
-    which
-    mode
-    to
-    use
-    by
-    adding
-    specific
-    classes.List
-    below
-    indicates
-    the
-    style
-    classes
-    for each mode. < /p>
+                    <h4>Menu Modes</h4>
+                    <p>Menu has 2 modes, static and overlay. Main layout container element in App.js is used to define which mode to use by adding specific classes. List
+                        below indicates the style classes for each mode.</p>
 
-    < ul >
-    < li > Static
-:
-    "layout-wrapper layout-static" < /li>
-    < li > Overlay
-:
-    "layout-wrapper layout-overlay" < /li>
-    < /ul>
+                    <ul>
+                        <li>Static: "layout-wrapper layout-static"</li>
+                        <li>Overlay: "layout-wrapper layout-overlay"</li>
+                    </ul>
 
-    < p > For
-    example
-    to
-    create
-    an
-    overlay
-    menu, the
-    div
-    element
-    should
-    be in following
-    form;
-<
-    /p>
-    < CodeHighlight >
-    {`
+                    <p>For example to create an overlay menu, the div element should be in following form;</p>
+                    <CodeHighlight>
+                        {`
 <div className="layout-wrapper layout-overlay">
-`
-}
-<
-    /CodeHighlight>
+`}
+                    </CodeHighlight>
 
-    < p > It
-    is
-    also
-    possible
-    to
-    leave
-    the
-    choice
-    to
-    the
-    user
-    by
-    keeping
-    the
-    preference
-    at
-    a
-    component
-    and
-    using
-    an
-    expression
-    to
-    bind
-    it
-    so
-    that
-    user
-    can
-    switch between
-        modes.
-            Sample
-            application
-            has
-            an
-            example
-            implementation
-            of
-            such
-            use
-        case.
-            Refer
-            to
-            App.js
-            for an example. < /p>
+                    <p>It is also possible to leave the choice to the user by keeping the preference at a component and using an expression to bind it so that user can switch between modes. Sample
+                        application has an example implementation of such use case. Refer to App.js for an example.</p>
 
-            < h4 > Menu
-            Color
-            Scheme < /h4>
-            < p > There
-            are
-            two
-            alternatives as the
-            menu
-            colors
-            schemes;
-            "light"
-            and
-            "dark".A
-            color
-            scheme
-            is
-            applied
-            using
-            the < i > layout - sidebar - light < /i> or <i>layout-sidebar-dark </i >
-            to
-            the
-            sidebar
-            element. < /p>
+                    <h4>Menu Color Scheme</h4>
+                    <p>There are two alternatives as the menu colors schemes; "light" and "dark". A color scheme is applied using the <i>layout-sidebar-light</i> or <i>layout-sidebar-dark </i>
+                        to the sidebar element.</p>
 
-            < b > Dark
-            Menu < /b>
-            < CodeHighlight >
-            {`
+                    <b>Dark Menu</b>
+                    <CodeHighlight>
+                        {`
 <div className="layout-sidebar layout-sidebar-dark">
-`
-}
-<
-    /CodeHighlight>
+`}
+                    </CodeHighlight>
 
-    < b > Light
-    Menu < /b>
-    < CodeHighlight >
-    {`
+                    <b>Light Menu</b>
+                    <CodeHighlight>
+                        {`
 <div className="layout-sidebar layout-sidebar-light">
-`
-}
-<
-    /CodeHighlight>
+`}
+                    </CodeHighlight>
 
-    < h4 > Grid
-    CSS < /h4>
-    < p > Sigma
-    uses
-    PrimeFlex
-    CSS
-    Grid
-    throughout
-    the
-    samples.Although
-    any
-    grid
-    library
-    can
-    be
-    used, we
-    recommend
-    using
-    PrimeFlex as your
-    layout
-    framework as it
-    is
-    well
-    tested
-    and
-    supported
-    by
-    PrimeReact.PrimeFlex
-    is
-    available
-    at < a
-    href = "https://www.npmjs.com/package/primeflex" > NPM < /a>.</
-    p >
+                    <h4>Grid CSS</h4>
+                    <p>Sigma uses PrimeFlex CSS Grid throughout the samples. Although any grid library can be used, we recommend using PrimeFlex as your layout framework as it is well tested and supported by PrimeReact. PrimeFlex is
+                        available at <a href="https://www.npmjs.com/package/primeflex">NPM</a>.</p>
 
-    < h4 > Customizing
-    Styles < /h4>
-    < p > It
-    is
-    suggested
-    to
-    write
-    your
-    customizations in < i > src / layout / _overrides.scss < /i> file instead of adding them to the
-    scss
-    files
-    under
-    sass
-    folder
-    to
-    avoid
-    maintenance
-    issues
-    after
-    an
-    update. < /p>
-    < /div>
-    < /div>
-    < /div>
-)
+                    <h4>Customizing Styles</h4>
+                    <p>It is suggested to write your customizations in <i>src/layout/_overrides.scss</i> file instead of adding them to the
+                        scss files under sass folder to avoid maintenance issues after an update.</p>
+                </div>
+            </div>
+        </div>
+    )
 }

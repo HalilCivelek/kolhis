@@ -33,26 +33,17 @@ const AppSubmenu = (props) => {
     }
 
     const renderLinkContent = (item) => {
-        let submenuIcon = item.items && < i
-        className = "pi pi-fw pi-angle-down menuitem-toggle-icon" > < /i>;
-        let badge = item.badge && < span
-        className = "menuitem-badge" > {item.badge} < /span>;
+        let submenuIcon = item.items && <i className="pi pi-fw pi-angle-down menuitem-toggle-icon"></i>;
+        let badge = item.badge && <span className="menuitem-badge">{item.badge}</span>;
 
         return (
-            < React.Fragment >
-            < i
-        className = {item.icon} > < /i>
-            < span > {item.label} < /span>
-        {
-            submenuIcon
-        }
-        {
-            badge
-        }
-    <
-        /React.Fragment>
-    )
-        ;
+            <React.Fragment>
+                <i className={item.icon}></i>
+                <span>{item.label}</span>
+                {submenuIcon}
+                {badge}
+            </React.Fragment>
+        );
     }
 
     const renderLink = (item, i) => {
@@ -60,31 +51,16 @@ const AppSubmenu = (props) => {
 
         if (item.to) {
             return (
-                < NavLink
-            activeClassName = "active-route"
-            to = {item.to}
-            onClick = {(e)
-        =>
-            onMenuItemClick(e, item, i)
-        }
-            exact
-            target = {item.target} >
-                {content}
-                < /NavLink>
-        )
+                <NavLink activeClassName="active-route" to={item.to} onClick={(e) => onMenuItemClick(e, item, i)} exact target={item.target}>
+                    {content}
+                </NavLink>
+            )
         } else {
             return (
-                < a
-            href = {item.url}
-            onClick = {(e)
-        =>
-            onMenuItemClick(e, item, i)
-        }
-            target = {item.target} >
-                {content}
-                < /a>
-        )
-            ;
+                <a href={item.url} onClick={(e) => onMenuItemClick(e, item, i)} target={item.target}>
+                    {content}
+                </a>
+            );
         }
     }
 
@@ -93,52 +69,23 @@ const AppSubmenu = (props) => {
         let styleClass = classNames(item.badgeStyleClass, {'active-menuitem': active && !item.to});
 
         return (
-            < li
-        className = {styleClass}
-        key = {i} >
-            {item.items && props.root === true && < div className = 'arrow' > < /div>}
-        {
-            renderLink(item, i)
-        }
-    <
-        CSSTransition
-        classNames = "p-toggleable-content"
-        timeout = {
-        {
-            enter: 1000, exit
-        :
-            450
-        }
-    } in
-        = {active}
-        unmountOnExit >
-        < AppSubmenu
-        items = {item.items}
-        onMenuItemClick = {props.onMenuItemClick}
-        />
-        < /CSSTransition>
-        < /li>
-    )
-        ;
+            <li className={styleClass} key={i}>
+                {item.items && props.root === true && <div className='arrow'></div>}
+                {renderLink(item, i)}
+                <CSSTransition classNames="p-toggleable-content" timeout={{enter: 1000, exit: 450}} in={active} unmountOnExit>
+                    <AppSubmenu items={item.items} onMenuItemClick={props.onMenuItemClick}/>
+                </CSSTransition>
+            </li>
+        );
     });
 
-    return items ?
-<
-    ul
-    className = {props.className} > {items} < /ul> : null;
+    return items ? <ul className={props.className}>{items}</ul> : null;
 }
 
 export const AppMenu = (props) => {
     return (
-        < div
-    className = "layout-menu-container" >
-        < AppSubmenu
-    items = {props.model}
-    className = "layout-menu"
-    onMenuItemClick = {props.onMenuItemClick}
-    root = {true}
-    />
-    < /div>
-)
-    ;
+        <div className="layout-menu-container">
+            <AppSubmenu items={props.model} className="layout-menu" onMenuItemClick={props.onMenuItemClick} root={true}/>
+        </div>
+    );
 }

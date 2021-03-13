@@ -54,167 +54,56 @@ export const InvalidStateDemo = () => {
     };
 
     return (
-        < div
-    className = "p-grid floatlabel-demo" >
-        < div
-    className = "p-col-12" >
-        < div
-    className = "card p-fluid" >
-        < h5 > Invalid
-    State < /h5>
-    < p > All
-    form
-    components
-    have
-    an
-    invalid
-    state
-    style
-    to
-    display
-    the
-    validation
-    errors. < /p>
-    < div
-    className = "p-grid" >
-        < div
-    className = "p-col-12 p-md-6" >
-        < div
-    className = "p-field" >
-        < label
-    htmlFor = "inputtext" > InputText < /label>
-        < InputText
-    type = "text"
-    id = "inputtext"
-    value = {value1}
-    onChange = {(e)
-=>
-    setValue1(e.target.value)
-}
-    className = "p-invalid" / >
-        < /div>
-        < div
-    className = "p-field" >
-        < label
-    htmlFor = "autocomplete" > AutoComplete < /label>
-        < AutoComplete
-    id = "autocomplete"
-    value = {value5}
-    onChange = {(e)
-=>
-    setValue5(e.value)
-}
-    suggestions = {filteredCountries}
-    completeMethod = {searchCountry}
-    field = "name"
-    className = "p-invalid" > < /AutoComplete>
-        < /div>
-        < div
-    className = "p-field" >
-        < label
-    htmlFor = "calendar" > Calendar < /label>
-        < Calendar
-    inputId = "calendar"
-    value = {value6}
-    onChange = {(e)
-=>
-    setValue6(e.value)
-}
-    className = "p-invalid" > < /Calendar>
-        < /div>
-        < div
-    className = "p-field" >
-        < label
-    htmlFor = "chips" > Chips < /label>
-        < Chips
-    inputId = "chips"
-    value = {value8}
-    onChange = {(e)
-=>
-    setValue8(e.value)
-}
-    className = "p-invalid" > < /Chips>
-        < /div>
-        < div
-    className = "p-field" >
-        < label
-    htmlFor = "textarea" > Textarea < /label>
-        < InputTextarea
-    id = "textarea"
-    rows = "3"
-    cols = "30"
-    value = {value4}
-    onChange = {(e)
-=>
-    setValue4(e.target.value)
-}
-    className = "p-invalid" > < /InputTextarea>
-        < /div>
-        < /div>
+        <div className="p-grid floatlabel-demo">
+            <div className="p-col-12">
+                <div className="card p-fluid">
+                    <h5>Invalid State</h5>
+                    <p>All form components have an invalid state style to display the validation errors.</p>
+                    <div className="p-grid">
+                        <div className="p-col-12 p-md-6">
+                            <div className="p-field">
+                                <label htmlFor="inputtext">InputText</label>
+                                <InputText type="text" id="inputtext" value={value1} onChange={(e) => setValue1(e.target.value)} className="p-invalid"/>
+                            </div>
+                            <div className="p-field">
+                                <label htmlFor="autocomplete">AutoComplete</label>
+                                <AutoComplete id="autocomplete" value={value5} onChange={(e) => setValue5(e.value)} suggestions={filteredCountries} completeMethod={searchCountry} field="name" className="p-invalid"></AutoComplete>
+                            </div>
+                            <div className="p-field">
+                                <label htmlFor="calendar">Calendar</label>
+                                <Calendar inputId="calendar" value={value6} onChange={(e) => setValue6(e.value)} className="p-invalid"></Calendar>
+                            </div>
+                            <div className="p-field">
+                                <label htmlFor="chips">Chips</label>
+                                <Chips inputId="chips" value={value8} onChange={(e) => setValue8(e.value)} className="p-invalid"></Chips>
+                            </div>
+                            <div className="p-field">
+                                <label htmlFor="textarea">Textarea</label>
+                                <InputTextarea id="textarea" rows="3" cols="30" value={value4} onChange={(e) => setValue4(e.target.value)} className="p-invalid"></InputTextarea>
+                            </div>
+                        </div>
 
-        < div
-    className = "p-col-12 p-md-6" >
-        < div
-    className = "p-field" >
-        < label
-    htmlFor = "inputmask" > InputMask < /label>
-        < InputMask
-    id = "inputmask"
-    mask = "99/99/9999"
-    value = {value2}
-    onChange = {(e)
-=>
-    setValue2(e.value)
-}
-    className = "p-invalid" > < /InputMask>
-        < /div>
-        < div
-    className = "p-field" >
-        < label
-    htmlFor = "inputnumber" > InputNumber < /label>
-        < InputNumber
-    id = "inputnumber"
-    value = {value3}
-    onValueChange = {(e)
-=>
-    setValue3(e.target.value)
-}
-    className = "p-invalid" > < /InputNumber>
-        < /div>
-        < div
-    className = "p-field" >
-        < label
-    htmlFor = "dropdown" > Dropdown < /label>
-        < Dropdown
-    id = "dropdown"
-    options = {cities}
-    value = {value7}
-    onChange = {(e)
-=>
-    setValue7(e.value)
-}
-    optionLabel = "name"
-    className = "p-invalid" > < /Dropdown>
-        < /div>
-        < div
-    className = "p-field" >
-        < label
-    htmlFor = "multiselect" > MultiSelect < /label>
-        < MultiSelect
-    id = "multiselect"
-    options = {cities}
-    value = {value9}
-    onChange = {(e)
-=>
-    setValue9(e.value)
-}
-    optionLabel = "name"
-    className = "p-invalid" > < /MultiSelect>
-        < /div>
-        < /div>
-        < /div>
-        < /div>
-        < /div>
-        < /div>
-)
+                        <div className="p-col-12 p-md-6">
+                            <div className="p-field">
+                                <label htmlFor="inputmask">InputMask</label>
+                                <InputMask id="inputmask" mask="99/99/9999" value={value2} onChange={(e) => setValue2(e.value)} className="p-invalid"></InputMask>
+                            </div>
+                            <div className="p-field">
+                                <label htmlFor="inputnumber">InputNumber</label>
+                                <InputNumber id="inputnumber" value={value3} onValueChange={(e) => setValue3(e.target.value)} className="p-invalid"></InputNumber>
+                            </div>
+                            <div className="p-field">
+                                <label htmlFor="dropdown">Dropdown</label>
+                                <Dropdown id="dropdown" options={cities} value={value7} onChange={(e) => setValue7(e.value)} optionLabel="name" className="p-invalid"></Dropdown>
+                            </div>
+                            <div className="p-field">
+                                <label htmlFor="multiselect">MultiSelect</label>
+                                <MultiSelect id="multiselect" options={cities} value={value9} onChange={(e) => setValue9(e.value)} optionLabel="name" className="p-invalid"></MultiSelect>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    )
 }

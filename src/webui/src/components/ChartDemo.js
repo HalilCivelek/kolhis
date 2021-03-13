@@ -131,79 +131,39 @@ export const ChartDemo = () => {
     };
 
     return (
-        < div
-    className = "p-grid p-fluid" >
-        < div
-    className = "p-col-12 p-lg-6" >
-        < div
-    className = "card" >
-        < h5
-    className = "centerText" > Linear
-    Chart < /h5>
-    < Chart
-    type = "line"
-    data = {lineData}
-    />
-    < /div>
+        <div className="p-grid p-fluid">
+            <div className="p-col-12 p-lg-6">
+                <div className="card">
+                    <h5 className="centerText">Linear Chart</h5>
+                    <Chart type="line" data={lineData}/>
+                </div>
 
-    < div
-    className = "card" >
-        < h5
-    className = "centerText" > Pie
-    Chart < /h5>
-    < Chart
-    type = "pie"
-    data = {pieData}
-    />
-    < /div>
+                <div className="card">
+                    <h5 className="centerText">Pie Chart</h5>
+                    <Chart type="pie" data={pieData}/>
+                </div>
 
-    < div
-    className = "card" >
-        < h5
-    className = "centerText" > Polar
-    Area
-    Chart < /h5>
-    < Chart
-    type = "polarArea"
-    data = {polarData}
-    />
-    < /div>
-    < /div>
-    < div
-    className = "p-col-12 p-lg-6" >
-        < div
-    className = "card" >
-        < h5
-    className = "centerText" > Bar
-    Chart < /h5>
-    < Chart
-    type = "bar"
-    data = {barData}
-    />
-    < /div>
+                <div className="card">
+                    <h5 className="centerText">Polar Area Chart</h5>
+                    <Chart type="polarArea" data={polarData}/>
+                </div>
+            </div>
+            <div className="p-col-12 p-lg-6">
+                <div className="card">
+                    <h5 className="centerText">Bar Chart</h5>
+                    <Chart type="bar" data={barData}/>
+                </div>
 
-    < div
-    className = "card" >
-        < h5
-    className = "centerText" > Doughnut
-    Chart < /h5>
-    < Chart
-    type = "doughnut"
-    data = {doughnutData}
-    />
-    < /div>
+                <div className="card">
+                    <h5 className="centerText">Doughnut Chart</h5>
+                    <Chart type="doughnut" data={doughnutData}/>
+                </div>
 
-    < div
-    className = "card" >
-        < h5
-    className = "centerText" > Radar
-    Chart < /h5>
-    < Chart
-    type = "radar"
-    data = {radarData}
-    />
-    < /div>
-    < /div>
-    < /div>
-)
+                <div className="card">
+                    <h5 className="centerText">Radar Chart</h5>
+                    <Chart type="radar" data={radarData}/>
+                </div>
+            </div>
+        </div>
+    )
 }

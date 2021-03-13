@@ -460,162 +460,88 @@ export const MenuDemo = () => {
 
     const menubarEndTemplate = () => {
         return (
-            < span
-        className = "p-input-icon-left" >
-            < i
-        className = "pi pi-search" / >
-            < InputText
-        type = "text"
-        placeholder = "Search" / >
-            < /span>
-    )
-        ;
+            <span className="p-input-icon-left">
+                <i className="pi pi-search"/>
+                <InputText type="text" placeholder="Search"/>
+            </span>
+        );
     };
 
     return (
-        < div
-    className = "p-grid p-fluid" >
-        < div
-    className = "p-col-12" >
-        < div
-    className = "card card-w-title" >
-        < h5 > Menubar < /h5>
-        < Menubar
-    model = {nestedMenuitems}
-    end = {menubarEndTemplate} > < /Menubar>
-        < /div>
-        < /div>
+        <div className="p-grid p-fluid">
+            <div className="p-col-12">
+                <div className="card card-w-title">
+                    <h5>Menubar</h5>
+                    <Menubar model={nestedMenuitems} end={menubarEndTemplate}></Menubar>
+                </div>
+            </div>
 
-        < div
-    className = "p-col-12" >
-        < div
-    className = "card card-w-title" >
-        < h5 > Breadcrumb < /h5>
-        < BreadCrumb
-    home = {breadcrumbHome}
-    model = {breadcrumbItems}
-    />
-    < /div>
-    < /div>
+            <div className="p-col-12">
+                <div className="card card-w-title">
+                    <h5>Breadcrumb</h5>
+                    <BreadCrumb home={breadcrumbHome} model={breadcrumbItems}/>
+                </div>
+            </div>
 
-    < div
-    className = "p-col-12 p-md-6" >
-        < div
-    className = "card card-w-title" >
-        < h5 > Steps < /h5>
-        < Steps
-    model = {wizardItems}
-    readonly = {false}
-    />
-    < /div>
-    < /div>
+            <div className="p-col-12 p-md-6">
+                <div className="card card-w-title">
+                    <h5>Steps</h5>
+                    <Steps model={wizardItems} readonly={false}/>
+                </div>
+            </div>
 
-    < div
-    className = "p-col-12 p-md-6" >
-        < div
-    className = "card card-w-title" >
-        < h5 > TabMenu < /h5>
-        < TabMenu
-    model = {wizardItems}
-    />
-    < /div>
-    < /div>
+            <div className="p-col-12 p-md-6">
+                <div className="card card-w-title">
+                    <h5>TabMenu</h5>
+                    <TabMenu model={wizardItems}/>
+                </div>
+            </div>
 
-    < div
-    className = "p-col-12 p-md-4" >
-        < div
-    className = "card" >
-        < h5 > Tiered
-    Menu < /h5>
-    < TieredMenu
-    model = {tieredMenuItems}
-    />
-    < /div>
-    < /div>
+            <div className="p-col-12 p-md-4">
+                <div className="card">
+                    <h5>Tiered Menu</h5>
+                    <TieredMenu model={tieredMenuItems}/>
+                </div>
+            </div>
 
-    < div
-    className = "p-col-12 p-md-4" >
-        < div
-    className = "card" >
-        < h5 > Plain
-    Menu < /h5>
-    < Menu
-    model = {menuitems}
-    />
-    < /div>
-    < /div>
+            <div className="p-col-12 p-md-4">
+                <div className="card">
+                    <h5>Plain Menu</h5>
+                    <Menu model={menuitems}/>
+                </div>
+            </div>
 
-    < div
-    className = "p-col-12 p-md-4" >
-        < div
-    className = "card" >
-        < h5 > Overlay
-    Menu < /h5>
+            <div className="p-col-12 p-md-4">
+                <div className="card">
+                    <h5>Overlay Menu</h5>
 
-    < Menu
-    ref = {menu}
-    model = {overlayMenuItems}
-    popup / >
-    < Button
-    type = "button"
-    label = "Options"
-    icon = "pi pi-angle-down"
-    onClick = {toggleMenu}
-    style = {
-    {
-        width: 'auto'
-    }
-}
-    />
-    < /div>
+                    <Menu ref={menu} model={overlayMenuItems} popup/>
+                    <Button type="button" label="Options" icon="pi pi-angle-down" onClick={toggleMenu} style={{width: 'auto'}}/>
+                </div>
 
-    < div
-    className = "card"
-    onContextMenu = {onContextRightClick} >
-        < h5 > ContextMenu < /h5>
-    Right
-    click
-    to
-    display.
-    < ContextMenu
-    ref = {contextMenu}
-    model = {contextMenuItems}
-    />
-    < /div>
-    < /div>
+                <div className="card" onContextMenu={onContextRightClick}>
+                    <h5>ContextMenu</h5>
+                    Right click to display.
+                    <ContextMenu ref={contextMenu} model={contextMenuItems}/>
+                </div>
+            </div>
 
-    < div
-    className = "p-col-12 p-md-6" >
-        < div
-    className = "card" >
-        < h5 > MegaMenu - Horizontal < /h5>
-        < MegaMenu
-    model = {megamenuItems}
-    />
+            <div className="p-col-12 p-md-6">
+                <div className="card">
+                    <h5>MegaMenu - Horizontal</h5>
+                    <MegaMenu model={megamenuItems}/>
 
-    < h5
-    style = {
-    {
-        marginTop: '1.55em'
-    }
-}>
-    MegaMenu - Vertical < /h5>
-    < MegaMenu
-    model = {megamenuItems}
-    orientation = "vertical" / >
-        < /div>
-        < /div>
+                    <h5 style={{marginTop: '1.55em'}}>MegaMenu - Vertical</h5>
+                    <MegaMenu model={megamenuItems} orientation="vertical"/>
+                </div>
+            </div>
 
-        < div
-    className = "p-col-12 p-md-6" >
-        < div
-    className = "card" >
-        < h5 > PanelMenu < /h5>
-        < PanelMenu
-    model = {panelMenuitems}
-    />
-    < /div>
-    < /div>
-    < /div>
-)
+            <div className="p-col-12 p-md-6">
+                <div className="card">
+                    <h5>PanelMenu</h5>
+                    <PanelMenu model={panelMenuitems}/>
+                </div>
+            </div>
+        </div>
+    )
 }

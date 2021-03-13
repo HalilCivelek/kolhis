@@ -279,190 +279,58 @@ const App = () => {
     });
 
     return (
-        < div
-    className = {wrapperClass}
-    onClick = {onWrapperClick} >
-        < AppTopbar
-    onToggleMenu = {onToggleMenu}
-    />
+        <div className={wrapperClass} onClick={onWrapperClick}>
+            <AppTopbar onToggleMenu={onToggleMenu}/>
 
-    < CSSTransition
-    classNames = "layout-sidebar"
-    timeout = {
-    {
-        enter: 200, exit
-    :
-        200
-    }
-} in
-    = {isSidebarVisible()}
-    unmountOnExit >
-    < div
-    ref = {sidebar}
-    className = {sidebarClassName}
-    onClick = {onSidebarClick} >
-        < div
-    className = "layout-logo"
-    style = {
-    {
-        cursor: 'pointer'
-    }
-}
-    onClick = {()
-=>
-    history.push('/')
-}>
-<
-    img
-    alt = "Logo"
-    src = {logo}
-    />
-    < /div>
-    < AppProfile / >
-    < AppMenu
-    model = {menu}
-    onMenuItemClick = {onMenuItemClick}
-    />
-    < /div>
-    < /CSSTransition>
+            <CSSTransition classNames="layout-sidebar" timeout={{enter: 200, exit: 200}} in={isSidebarVisible()} unmountOnExit>
+                <div ref={sidebar} className={sidebarClassName} onClick={onSidebarClick}>
+                    <div className="layout-logo" style={{cursor: 'pointer'}} onClick={() => history.push('/')}>
+                        <img alt="Logo" src={logo}/>
+                    </div>
+                    <AppProfile/>
+                    <AppMenu model={menu} onMenuItemClick={onMenuItemClick}/>
+                </div>
+            </CSSTransition>
 
-    < AppConfig
-    rippleEffect = {ripple}
-    onRippleEffect = {onRipple}
-    inputStyle = {inputStyle}
-    onInputStyleChange = {onInputStyleChange}
-    layoutMode = {layoutMode}
-    onLayoutModeChange = {onLayoutModeChange}
-    layoutColorMode = {layoutColorMode}
-    onColorModeChange = {onColorModeChange}
-    />
+            <AppConfig rippleEffect={ripple} onRippleEffect={onRipple} inputStyle={inputStyle} onInputStyleChange={onInputStyleChange}
+                       layoutMode={layoutMode} onLayoutModeChange={onLayoutModeChange} layoutColorMode={layoutColorMode} onColorModeChange={onColorModeChange}/>
 
-    < div
-    className = "layout-main" >
-        < Route
-    path = "/"
-    exact
-    component = {Dashboard}
-    />
-    < Route
-    path = "/formlayout"
-    component = {FormLayoutDemo}
-    />
-    < Route
-    path = "/input"
-    component = {InputDemo}
-    />
-    < Route
-    path = "/floatlabel"
-    component = {FloatLabelDemo}
-    />
-    < Route
-    path = "/invalidstate"
-    component = {InvalidStateDemo}
-    />
-    < Route
-    path = "/button"
-    component = {ButtonDemo}
-    />
-    < Route
-    path = "/table"
-    component = {TableDemo}
-    />
-    < Route
-    path = "/list"
-    component = {ListDemo}
-    />
-    < Route
-    path = "/tree"
-    component = {TreeDemo}
-    />
-    < Route
-    path = "/panel"
-    component = {PanelDemo}
-    />
-    < Route
-    path = "/overlay"
-    component = {OverlayDemo}
-    />
-    < Route
-    path = "/menu"
-    component = {MenuDemo}
-    />
-    < Route
-    path = "/messages"
-    component = {MessagesDemo}
-    />
-    < Route
-    path = "/file"
-    component = {FileDemo}
-    />
-    < Route
-    path = "/chart"
-    component = {ChartDemo}
-    />
-    < Route
-    path = "/misc"
-    component = {MiscDemo}
-    />
-    < Route
-    path = "/display"
-    component = {DisplayDemo}
-    />
-    < Route
-    path = "/elevation"
-    component = {ElevationDemo}
-    />
-    < Route
-    path = "/flexbox"
-    component = {FlexBoxDemo}
-    />
-    < Route
-    path = "/icons"
-    component = {IconsDemo}
-    />
-    < Route
-    path = "/grid"
-    component = {GridDemo}
-    />
-    < Route
-    path = "/spacing"
-    component = {SpacingDemo}
-    />
-    < Route
-    path = "/typography"
-    component = {TypographyDemo}
-    />
-    < Route
-    path = "/text"
-    component = {TextDemo}
-    />
-    < Route
-    path = "/calendar"
-    component = {Calendar}
-    />
-    < Route
-    path = "/timeline"
-    component = {TimelineDemo}
-    />
-    < Route
-    path = "/crud"
-    component = {Crud}
-    />
-    < Route
-    path = "/empty"
-    component = {EmptyPage}
-    />
-    < Route
-    path = "/documentation"
-    component = {Documentation}
-    />
-    < /div>
+            <div className="layout-main">
+                <Route path="/" exact component={Dashboard}/>
+                <Route path="/formlayout" component={FormLayoutDemo}/>
+                <Route path="/input" component={InputDemo}/>
+                <Route path="/floatlabel" component={FloatLabelDemo}/>
+                <Route path="/invalidstate" component={InvalidStateDemo}/>
+                <Route path="/button" component={ButtonDemo}/>
+                <Route path="/table" component={TableDemo}/>
+                <Route path="/list" component={ListDemo}/>
+                <Route path="/tree" component={TreeDemo}/>
+                <Route path="/panel" component={PanelDemo}/>
+                <Route path="/overlay" component={OverlayDemo}/>
+                <Route path="/menu" component={MenuDemo}/>
+                <Route path="/messages" component={MessagesDemo}/>
+                <Route path="/file" component={FileDemo}/>
+                <Route path="/chart" component={ChartDemo}/>
+                <Route path="/misc" component={MiscDemo}/>
+                <Route path="/display" component={DisplayDemo}/>
+                <Route path="/elevation" component={ElevationDemo}/>
+                <Route path="/flexbox" component={FlexBoxDemo}/>
+                <Route path="/icons" component={IconsDemo}/>
+                <Route path="/grid" component={GridDemo}/>
+                <Route path="/spacing" component={SpacingDemo}/>
+                <Route path="/typography" component={TypographyDemo}/>
+                <Route path="/text" component={TextDemo}/>
+                <Route path="/calendar" component={Calendar}/>
+                <Route path="/timeline" component={TimelineDemo}/>
+                <Route path="/crud" component={Crud}/>
+                <Route path="/empty" component={EmptyPage}/>
+                <Route path="/documentation" component={Documentation}/>
+            </div>
 
-    < AppFooter / >
+            <AppFooter/>
 
-    < /div>
-)
-    ;
+        </div>
+    );
 
 }
 

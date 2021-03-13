@@ -18,22 +18,12 @@ export const CodeHighlight = (props) => {
     }, []);
 
     return (
-        < pre
-    style = {props.style} >
-        < code
-    ref = {codeElement}
-    className = {`language-${props.lang}`
-}>
-    {
-        props.children
-    }
-&
-    nbsp;
-<
-    /code>
-    < /pre>
-)
-    ;
+        <pre style={props.style}>
+            <code ref={codeElement} className={`language-${props.lang}`}>
+                {props.children}&nbsp;
+                </code>
+        </pre>
+    );
 }
 
 CodeHighlight.defaultProps = {

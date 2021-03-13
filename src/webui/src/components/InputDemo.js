@@ -114,540 +114,226 @@ export const InputDemo = () => {
 
     const itemTemplate = (option) => {
         return (
-            < div
-        className = "country-item" >
-            < span
-        className = {`flag flag-${option.code.toLowerCase()}`
-    }
-        />
-        < span > {option.name} < /span>
-        < /div>
-    )
-        ;
+            <div className="country-item">
+                <span className={`flag flag-${option.code.toLowerCase()}`}/>
+                <span>{option.name}</span>
+            </div>
+        );
     };
 
     const selectedItemTemplate = (option) => {
         if (option) {
             return (
-                < div
-            className = "country-item country-item-value" >
-                < span
-            className = {`flag flag-${option.code.toLowerCase()}`
-        }
-            />
-            < span > {option.name} < /span>
-            < /div>
-        )
-            ;
+                <div className="country-item country-item-value">
+                    <span className={`flag flag-${option.code.toLowerCase()}`}/>
+                    <span>{option.name}</span>
+                </div>
+            );
         }
 
         return 'Select Countries';
     };
 
     return (
-        < div
-    className = "p-grid p-fluid input-demo" >
-        < div
-    className = "p-col-12 p-md-6" >
-        < div
-    className = "card" >
-        < h5 > InputText < /h5>
-        < div
-    className = "p-grid p-formgrid" >
-        < div
-    className = "p-col-12 p-mb-2 p-lg-4 p-mb-lg-0" >
-        < InputText
-    type = "text"
-    placeholder = "Default" > < /InputText>
-        < /div>
-        < div
-    className = "p-col-12 p-mb-2 p-lg-4 p-mb-lg-0" >
-        < InputText
-    type = "text"
-    placeholder = "Disabled"
-    disabled > < /InputText>
-    < /div>
-    < div
-    className = "p-col-12 p-mb-2 p-lg-4 p-mb-lg-0" >
-        < InputText
-    type = "text"
-    placeholder = "Invalid"
-    className = "p-error" / >
-        < /div>
-        < /div>
+        <div className="p-grid p-fluid input-demo">
+            <div className="p-col-12 p-md-6">
+                <div className="card">
+                    <h5>InputText</h5>
+                    <div className="p-grid p-formgrid">
+                        <div className="p-col-12 p-mb-2 p-lg-4 p-mb-lg-0">
+                            <InputText type="text" placeholder="Default"></InputText>
+                        </div>
+                        <div className="p-col-12 p-mb-2 p-lg-4 p-mb-lg-0">
+                            <InputText type="text" placeholder="Disabled" disabled></InputText>
+                        </div>
+                        <div className="p-col-12 p-mb-2 p-lg-4 p-mb-lg-0">
+                            <InputText type="text" placeholder="Invalid" className="p-error"/>
+                        </div>
+                    </div>
 
-        < h5 > Icons < /h5>
-        < div
-    className = "p-grid p-formgrid" >
-        < div
-    className = "p-col-12 p-mb-2 p-lg-4 p-mb-lg-0" >
-        < span
-    className = "p-input-icon-left" >
-        < i
-    className = "pi pi-user" / >
-        < InputText
-    type = "text"
-    placeholder = "Username" / >
-        < /span>
-        < /div>
-        < div
-    className = "p-col-12 p-mb-2 p-lg-4 p-mb-lg-0" >
-        < span
-    className = "p-input-icon-right" >
-        < InputText
-    type = "text"
-    placeholder = "Search" / >
-        < i
-    className = "pi pi-search" / >
-        < /span>
-        < /div>
-        < div
-    className = "p-col-12 p-mb-2 p-lg-4 p-mb-lg-0" >
-        < span
-    className = "p-input-icon-left p-input-icon-right" >
-        < i
-    className = "pi pi-user" / >
-        < InputText
-    type = "text"
-    placeholder = "Search" / >
-        < i
-    className = "pi pi-search" / >
-        < /span>
-        < /div>
-        < /div>
+                    <h5>Icons</h5>
+                    <div className="p-grid p-formgrid">
+                        <div className="p-col-12 p-mb-2 p-lg-4 p-mb-lg-0">
+                            <span className="p-input-icon-left">
+                                <i className="pi pi-user"/>
+                                <InputText type="text" placeholder="Username"/>
+                            </span>
+                        </div>
+                        <div className="p-col-12 p-mb-2 p-lg-4 p-mb-lg-0">
+                            <span className="p-input-icon-right">
+                                <InputText type="text" placeholder="Search"/>
+                                <i className="pi pi-search"/>
+                            </span>
+                        </div>
+                        <div className="p-col-12 p-mb-2 p-lg-4 p-mb-lg-0">
+                            <span className="p-input-icon-left p-input-icon-right">
+                                <i className="pi pi-user"/>
+                                <InputText type="text" placeholder="Search"/>
+                                <i className="pi pi-search"/>
+                            </span>
+                        </div>
+                    </div>
 
-        < h5 > Float
-    Label < /h5>
-    < span
-    className = "p-float-label" >
-        < InputText
-    id = "username"
-    type = "text"
-    value = {floatValue}
-    onChange = {(e)
-=>
-    setFloatValue(e.target.value)
-}
-    />
-    < label
-    htmlFor = "username" > Username < /label>
-        < /span>
+                    <h5>Float Label</h5>
+                    <span className="p-float-label">
+                        <InputText id="username" type="text" value={floatValue} onChange={(e) => setFloatValue(e.target.value)}/>
+                        <label htmlFor="username">Username</label>
+                    </span>
 
-        < h5 > Textarea < /h5>
-        < InputTextarea
-    placeholder = "Your Message"
-    autoResize
-    rows = "3"
-    cols = "30" / >
+                    <h5>Textarea</h5>
+                    <InputTextarea placeholder="Your Message" autoResize rows="3" cols="30"/>
 
-        < h5 > AutoComplete < /h5>
-        < AutoComplete
-    placeholder = "Search"
-    id = "dd"
-    dropdown
-    multiple
-    value = {selectedAutoValue}
-    onChange = {(e)
-=>
-    setSelectedAutoValue(e.value)
-}
-    suggestions = {autoFilteredValue}
-    completeMethod = {searchCountry}
-    field = "name" / >
+                    <h5>AutoComplete</h5>
+                    <AutoComplete placeholder="Search" id="dd" dropdown multiple value={selectedAutoValue} onChange={(e) => setSelectedAutoValue(e.value)} suggestions={autoFilteredValue} completeMethod={searchCountry} field="name"/>
 
-        < h5 > Calendar < /h5>
-        < Calendar
-    showIcon
-    showButtonBar
-    value = {calendarValue}
-    onChange = {(e)
-=>
-    setCalendarValue(e.value)
-}><
-    /Calendar>
+                    <h5>Calendar</h5>
+                    <Calendar showIcon showButtonBar value={calendarValue} onChange={(e) => setCalendarValue(e.value)}></Calendar>
 
-    < h5 > InputNumber < /h5>
-    < InputNumber
-    value = {inputNumberValue}
-    onValueChange = {(e)
-=>
-    setInputNumberValue(e.value)
-}
-    showButtons
-    mode = "decimal" > < /InputNumber>
+                    <h5>InputNumber</h5>
+                    <InputNumber value={inputNumberValue} onValueChange={(e) => setInputNumberValue(e.value)} showButtons mode="decimal"></InputNumber>
 
-        < h5 > Chips < /h5>
-        < Chips
-    value = {chipsValue}
-    onChange = {(e)
-=>
-    setChipsValue(e.value)
-}
-    />
-    < /div>
+                    <h5>Chips</h5>
+                    <Chips value={chipsValue} onChange={(e) => setChipsValue(e.value)}/>
+                </div>
 
-    < div
-    className = "card" >
-        < div
-    className = "p-grid" >
-        < div
-    className = "p-col-12" >
-        < h5 > Slider < /h5>
-        < InputText
-    value = {sliderValue}
-    onChange = {(e)
-=>
-    setSliderValue(parseInt(e.target.value), 10)
-}
-    />
-    < Slider
-    value = {sliderValue}
-    onChange = {(e)
-=>
-    setSliderValue(e.value)
-}
-    />
-    < /div>
-    < div
-    className = "p-col-12 p-md-6" >
-        < h5 > Rating < /h5>
-        < Rating
-    value = {ratingValue}
-    onChange = {(e)
-=>
-    setRatingValue(e.value)
-}
-    />
-    < /div>
-    < div
-    className = "p-col-12 p-md-6" >
-        < h5 > ColorPicker < /h5>
-        < ColorPicker
-    value = {colorValue}
-    onChange = {(e)
-=>
-    setColorValue(e.value)
-}
-    style = {
-    {
-        width: '2rem'
-    }
-}
-    />
-    < /div>
-    < div
-    className = "p-col-12" >
-        < h5 > Knob < /h5>
-        < Knob
-    value = {knobValue}
-    valueTemplate = {"{value}%"}
-    onChange = {(e)
-=>
-    setKnobValue(e.value)
-}
-    step = {10}
-    min = { - 50
-}
-    max = {50}
-    />
-    < /div>
-    < /div>
-    < /div>
-    < /div>
+                <div className="card">
+                    <div className="p-grid">
+                        <div className="p-col-12">
+                            <h5>Slider</h5>
+                            <InputText value={sliderValue} onChange={(e) => setSliderValue(parseInt(e.target.value), 10)}/>
+                            <Slider value={sliderValue} onChange={(e) => setSliderValue(e.value)}/>
+                        </div>
+                        <div className="p-col-12 p-md-6">
+                            <h5>Rating</h5>
+                            <Rating value={ratingValue} onChange={(e) => setRatingValue(e.value)}/>
+                        </div>
+                        <div className="p-col-12 p-md-6">
+                            <h5>ColorPicker</h5>
+                            <ColorPicker value={colorValue} onChange={(e) => setColorValue(e.value)} style={{width: '2rem'}}/>
+                        </div>
+                        <div className="p-col-12">
+                            <h5>Knob</h5>
+                            <Knob value={knobValue} valueTemplate={"{value}%"} onChange={(e) => setKnobValue(e.value)} step={10} min={-50} max={50}/>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-    < div
-    className = "p-col-12 p-md-6" >
-        < div
-    className = "card" >
-        < h5 > RadioButton < /h5>
-        < div
-    className = "p-grid" >
-        < div
-    className = "p-col-12 p-md-4" >
-        < div
-    className = "p-field-radiobutton" >
-        < RadioButton
-    inputId = "option1"
-    name = "option"
-    value = "Chicago"
-    checked = {radioValue === 'Chicago'
-}
-    onChange = {(e)
-=>
-    setRadioValue(e.value)
-}
-    />
-    < label
-    htmlFor = "option1" > Chicago < /label>
-        < /div>
-        < /div>
-        < div
-    className = "p-col-12 p-md-4" >
-        < div
-    className = "p-field-radiobutton" >
-        < RadioButton
-    inputId = "option2"
-    name = "option"
-    value = "Los Angeles"
-    checked = {radioValue === 'Los Angeles'
-}
-    onChange = {(e)
-=>
-    setRadioValue(e.value)
-}
-    />
-    < label
-    htmlFor = "option2" > Los
-    Angeles < /label>
-    < /div>
-    < /div>
-    < div
-    className = "p-col-12 p-md-4" >
-        < div
-    className = "p-field-radiobutton" >
-        < RadioButton
-    inputId = "option3"
-    name = "option"
-    value = "New York"
-    checked = {radioValue === 'New York'
-}
-    onChange = {(e)
-=>
-    setRadioValue(e.value)
-}
-    />
-    < label
-    htmlFor = "option3" > New
-    York < /label>
-    < /div>
-    < /div>
-    < /div>
+            <div className="p-col-12 p-md-6">
+                <div className="card">
+                    <h5>RadioButton</h5>
+                    <div className="p-grid">
+                        <div className="p-col-12 p-md-4">
+                            <div className="p-field-radiobutton">
+                                <RadioButton inputId="option1" name="option" value="Chicago" checked={radioValue === 'Chicago'} onChange={(e) => setRadioValue(e.value)}/>
+                                <label htmlFor="option1">Chicago</label>
+                            </div>
+                        </div>
+                        <div className="p-col-12 p-md-4">
+                            <div className="p-field-radiobutton">
+                                <RadioButton inputId="option2" name="option" value="Los Angeles" checked={radioValue === 'Los Angeles'} onChange={(e) => setRadioValue(e.value)}/>
+                                <label htmlFor="option2">Los Angeles</label>
+                            </div>
+                        </div>
+                        <div className="p-col-12 p-md-4">
+                            <div className="p-field-radiobutton">
+                                <RadioButton inputId="option3" name="option" value="New York" checked={radioValue === 'New York'} onChange={(e) => setRadioValue(e.value)}/>
+                                <label htmlFor="option3">New York</label>
+                            </div>
+                        </div>
+                    </div>
 
-    < h5
-    style = {
-    {
-        marginTop: 0
-    }
-}>
-    Checkbox < /h5>
-    < div
-    className = "p-grid" >
-        < div
-    className = "p-col-12 p-md-4" >
-        < div
-    className = "p-field-checkbox" >
-        < Checkbox
-    inputId = "checkOption1"
-    name = "option"
-    value = "Chicago"
-    checked = {checkboxValue.indexOf('Chicago') !== -1}
-    onChange = {onCheckboxChange}
-    />
-    < label
-    htmlFor = "checkOption1" > Chicago < /label>
-        < /div>
-        < /div>
-        < div
-    className = "p-col-12 p-md-4" >
-        < div
-    className = "p-field-checkbox" >
-        < Checkbox
-    inputId = "checkOption2"
-    name = "option"
-    value = "Los Angeles"
-    checked = {checkboxValue.indexOf('Los Angeles') !== -1}
-    onChange = {onCheckboxChange}
-    />
-    < label
-    htmlFor = "checkOption2" > Los
-    Angeles < /label>
-    < /div>
-    < /div>
-    < div
-    className = "p-col-12 p-md-4" >
-        < div
-    className = "p-field-checkbox" >
-        < Checkbox
-    inputId = "checkOption3"
-    name = "option"
-    value = "New York"
-    checked = {checkboxValue.indexOf('New York') !== -1}
-    onChange = {onCheckboxChange}
-    />
-    < label
-    htmlFor = "checkOption3" > New
-    York < /label>
-    < /div>
-    < /div>
-    < /div>
+                    <h5 style={{marginTop: 0}}>Checkbox</h5>
+                    <div className="p-grid">
+                        <div className="p-col-12 p-md-4">
+                            <div className="p-field-checkbox">
+                                <Checkbox inputId="checkOption1" name="option" value="Chicago" checked={checkboxValue.indexOf('Chicago') !== -1} onChange={onCheckboxChange}/>
+                                <label htmlFor="checkOption1">Chicago</label>
+                            </div>
+                        </div>
+                        <div className="p-col-12 p-md-4">
+                            <div className="p-field-checkbox">
+                                <Checkbox inputId="checkOption2" name="option" value="Los Angeles" checked={checkboxValue.indexOf('Los Angeles') !== -1} onChange={onCheckboxChange}/>
+                                <label htmlFor="checkOption2">Los Angeles</label>
+                            </div>
+                        </div>
+                        <div className="p-col-12 p-md-4">
+                            <div className="p-field-checkbox">
+                                <Checkbox inputId="checkOption3" name="option" value="New York" checked={checkboxValue.indexOf('New York') !== -1} onChange={onCheckboxChange}/>
+                                <label htmlFor="checkOption3">New York</label>
+                            </div>
+                        </div>
+                    </div>
 
-    < h5
-    style = {
-    {
-        marginTop: 0
-    }
-}>
-    Input
-    Switch < /h5>
-    < InputSwitch
-    checked = {switchValue}
-    onChange = {(e)
-=>
-    setSwitchValue(e.value)
-}
-    />
-    < /div>
+                    <h5 style={{marginTop: 0}}>Input Switch</h5>
+                    <InputSwitch checked={switchValue} onChange={(e) => setSwitchValue(e.value)}/>
+                </div>
 
-    < div
-    className = "card" >
-        < h5 > Listbox < /h5>
-        < ListBox
-    value = {listboxValue}
-    onChange = {(e)
-=>
-    setListboxValue(e.value)
-}
-    options = {listboxValues}
-    optionLabel = "name"
-    filter / >
+                <div className="card">
+                    <h5>Listbox</h5>
+                    <ListBox value={listboxValue} onChange={(e) => setListboxValue(e.value)} options={listboxValues} optionLabel="name" filter/>
 
-    < h5 > Dropdown < /h5>
-    < Dropdown
-    value = {dropdownValue}
-    onChange = {(e)
-=>
-    setDropdownValue(e.value)
-}
-    options = {dropdownValues}
-    optionLabel = "name"
-    placeholder = "Select" / >
+                    <h5>Dropdown</h5>
+                    <Dropdown value={dropdownValue} onChange={(e) => setDropdownValue(e.value)} options={dropdownValues} optionLabel="name" placeholder="Select"/>
 
-        < h5 > MultiSelect < /h5>
-        < MultiSelect
-    value = {multiselectValue}
-    onChange = {(e)
-=>
-    setMultiselectValue(e.value)
-}
-    options = {multiselectValues}
-    optionLabel = "name"
-    placeholder = "Select Countries"
-    filter
-    itemTemplate = {itemTemplate}
-    selectedItemTemplate = {selectedItemTemplate}
-    className = "multiselect-custom" / >
-        < /div>
+                    <h5>MultiSelect</h5>
+                    <MultiSelect value={multiselectValue} onChange={(e) => setMultiselectValue(e.value)} options={multiselectValues} optionLabel="name" placeholder="Select Countries" filter
+                                 itemTemplate={itemTemplate} selectedItemTemplate={selectedItemTemplate} className="multiselect-custom"/>
+                </div>
 
-        < div
-    className = "card" >
-        < h5 > ToggleButton < /h5>
-        < ToggleButton
-    checked = {toggleValue}
-    onChange = {(e)
-=>
-    setToggleValue(e.value)
-}
-    onLabel = "Yes"
-    offLabel = "No" / >
+                <div className="card">
+                    <h5>ToggleButton</h5>
+                    <ToggleButton checked={toggleValue} onChange={(e) => setToggleValue(e.value)} onLabel="Yes" offLabel="No"/>
 
-        < h5 > SelectButton < /h5>
-        < SelectButton
-    value = {selectButtonValue1}
-    onChange = {(e)
-=>
-    setSelectButtonValue1(e.value)
-}
-    options = {selectButtonValues1}
-    optionLabel = "name" / >
+                    <h5>SelectButton</h5>
+                    <SelectButton value={selectButtonValue1} onChange={(e) => setSelectButtonValue1(e.value)} options={selectButtonValues1} optionLabel="name"/>
 
-        < h5 > SelectButton - Multiple < /h5>
-        < SelectButton
-    value = {selectButtonValue2}
-    onChange = {(e)
-=>
-    setSelectButtonValue2(e.value)
-}
-    options = {selectButtonValues2}
-    optionLabel = "name"
-    multiple / >
-    < /div>
-    < /div>
+                    <h5>SelectButton - Multiple</h5>
+                    <SelectButton value={selectButtonValue2} onChange={(e) => setSelectButtonValue2(e.value)} options={selectButtonValues2} optionLabel="name" multiple/>
+                </div>
+            </div>
 
-    < div
-    className = "p-col-12" >
-        < div
-    className = "card" >
-        < h5 > Input
-    Groups < /h5>
-    < div
-    className = "p-grid p-fluid" >
-        < div
-    className = "p-col-12 p-md-6" >
-        < div
-    className = "p-inputgroup" >
-        < span
-    className = "p-inputgroup-addon" >
-        < i
-    className = "pi pi-user" > < /i>
-        < /span>
-        < InputText
-    placeholder = "Username" / >
-        < /div>
-        < /div>
+            <div className="p-col-12">
+                <div className="card">
+                    <h5>Input Groups</h5>
+                    <div className="p-grid p-fluid">
+                        <div className="p-col-12 p-md-6">
+                            <div className="p-inputgroup">
+                                <span className="p-inputgroup-addon">
+                                    <i className="pi pi-user"></i>
+                                </span>
+                                <InputText placeholder="Username"/>
+                            </div>
+                        </div>
 
-        < div
-    className = "p-col-12 p-md-6" >
-        < div
-    className = "p-inputgroup" >
-        < span
-    className = "p-inputgroup-addon" > < i
-    className = "pi pi-shopping-cart" > < /i></s
-    pan >
-    < span
-    className = "p-inputgroup-addon" > < i
-    className = "pi pi-globe" > < /i></s
-    pan >
-    < InputText
-    placeholder = "Price" / >
-        < span
-    className = "p-inputgroup-addon" > $ < /span>
-        < span
-    className = "p-inputgroup-addon" > .00 < /span>
-        < /div>
-        < /div>
+                        <div className="p-col-12 p-md-6">
+                            <div className="p-inputgroup">
+                                <span className="p-inputgroup-addon"><i className="pi pi-shopping-cart"></i></span>
+                                <span className="p-inputgroup-addon"><i className="pi pi-globe"></i></span>
+                                <InputText placeholder="Price"/>
+                                <span className="p-inputgroup-addon">$</span>
+                                <span className="p-inputgroup-addon">.00</span>
+                            </div>
+                        </div>
 
-        < div
-    className = "p-col-12 p-md-6" >
-        < div
-    className = "p-inputgroup" >
-        < Button
-    label = "Search" / >
-        < InputText
-    placeholder = "Keyword" / >
-        < /div>
-        < /div>
+                        <div className="p-col-12 p-md-6">
+                            <div className="p-inputgroup">
+                                <Button label="Search"/>
+                                <InputText placeholder="Keyword"/>
+                            </div>
+                        </div>
 
-        < div
-    className = "p-col-12 p-md-6" >
-        < div
-    className = "p-inputgroup" >
-        < span
-    className = "p-inputgroup-addon p-inputgroup-addon-checkbox" >
-        < Checkbox
-    checked = {inputGroupValue}
-    onChange = {(e)
-=>
-    setInputGroupValue(e.checked)
-}
-    binary / >
-    < /span>
-    < InputText
-    placeholder = "Confirm" / >
-        < /div>
-        < /div>
-        < /div>
-        < /div>
-        < /div>
-        < /div>
-)
+                        <div className="p-col-12 p-md-6">
+                            <div className="p-inputgroup">
+                                <span className="p-inputgroup-addon p-inputgroup-addon-checkbox">
+                                    <Checkbox checked={inputGroupValue} onChange={(e) => setInputGroupValue(e.checked)} binary/>
+                                </span>
+                                <InputText placeholder="Confirm"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    )
 }

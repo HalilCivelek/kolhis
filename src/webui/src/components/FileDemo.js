@@ -10,33 +10,16 @@ export const FileDemo = () => {
     }
 
     return (
-        < div
-    className = "p-grid" >
-        < div
-    className = "p-col-12" >
-        < div
-    className = "card" >
-        < h5 > Advanced < /h5>
-        < FileUpload
-    name = "demo[]"
-    url = "./upload.php"
-    onUpload = {onUpload}
-    multiple
-    accept = "image/*"
-    maxFileSize = {1000000}
-    />
+        <div className="p-grid">
+            <div className="p-col-12">
+                <div className="card">
+                    <h5>Advanced</h5>
+                    <FileUpload name="demo[]" url="./upload.php" onUpload={onUpload} multiple accept="image/*" maxFileSize={1000000}/>
 
-    < h5 > Basic < /h5>
-    < FileUpload
-    mode = "basic"
-    name = "demo[]"
-    url = "./upload.php"
-    accept = "image/*"
-    maxFileSize = {1000000}
-    onUpload = {onUpload}
-    />
-    < /div>
-    < /div>
-    < /div>
-)
+                    <h5>Basic</h5>
+                    <FileUpload mode="basic" name="demo[]" url="./upload.php" accept="image/*" maxFileSize={1000000} onUpload={onUpload}/>
+                </div>
+            </div>
+        </div>
+    )
 }
