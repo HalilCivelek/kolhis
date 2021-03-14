@@ -16,11 +16,11 @@ export const User = () => {
         emailAddress: '',
         phoneNumber: '',
         status: '',
-        address: {
+        address: [  {
             address: '',
             city: '',
             district: '',
-        }
+        }]
     }
 
     const [user, setUser] = useState(User);
@@ -52,9 +52,9 @@ export const User = () => {
         debugger;
         user.address.city = city.code;
         user.address.district = district.code;
-        user.address.address = address;
+        user.address[0].address = address;
         UserService.saveUser(user).then(response => {
-            debugger;
+            
         })
     }
 

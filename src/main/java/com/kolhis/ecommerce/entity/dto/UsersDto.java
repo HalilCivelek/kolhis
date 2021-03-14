@@ -23,8 +23,8 @@ public class UsersDto extends BaseDto {
     private String userName;
     @ApiModelProperty(value = "phone number", required = true)
     private String phoneNumber;
-    @ApiModelProperty(value = "email", required = true)
-    private String email;
+    @ApiModelProperty(value = "emailAddress", required = true)
+    private String emailAddress;
     @ApiModelProperty(value = "password", required = true)
     private String password;
 

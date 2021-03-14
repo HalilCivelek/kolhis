@@ -31,7 +31,7 @@ public class Users extends BaseEntity{
     private String password;
     private String phoneNumber;
     @NotBlank
-    private String email;
+    private String emailAddress;
 
     private UserType userType;
 

@@ -6,7 +6,7 @@ public interface UsersRepository extends BaseJpaRepository<Users, Long> {
 
     Users findFirstByUserName(String userName);
 
-    Users findFirstByEmail(String eMail);
+    Users findFirstByEmailAddress(String eMailAddress);
 
     Users findFirstByPhoneNumber(String phoneNumber);
 }

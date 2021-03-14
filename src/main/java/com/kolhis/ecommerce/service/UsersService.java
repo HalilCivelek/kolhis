@@ -50,13 +50,13 @@ public class UsersService extends AbstractEntityService<Users, Long> {
 
         }
 
-        if (repository.findFirstByEmail(users.getEmail()) != null) {
+        if (repository.findFirstByEmailAddress(users.getEmailAddress()) != null) {
 
             throw new ValidationException("Mail adresi daha önce kullanılmış");
 
         }
 
-        if (repository.findFirstByPhoneNumber(users.getEmail()) != null) {
+        if (repository.findFirstByPhoneNumber(users.getPhoneNumber()) != null) {
 
             throw new ValidationException("Telefon numarası daha önce kullanılmış");
 
