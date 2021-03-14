@@ -8,4 +8,5 @@ public class BaseDto implements Serializable {
     protected String id;
     protected String createdDate;
     protected String lastModifiedDate;
+    protected Boolean status;
 }
