@@ -69,6 +69,11 @@
 			<groupId>org.xmlunit</groupId>
 			<artifactId>xmlunit-core</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-crypto</artifactId>
+			<version>5.3.2.RELEASE</version>
+		</dependency>
 	</dependencies>
 
 	<build>

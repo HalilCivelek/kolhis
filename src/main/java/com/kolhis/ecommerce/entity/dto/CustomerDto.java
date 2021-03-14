@@ -8,7 +8,7 @@ import lombok.ToString;
 
 @Data
 @ToString(callSuper = true)
-@ApiModel(value = "Company Data Transfer Object")
+@ApiModel(value = "Customer Data Transfer Object")
 public class CustomerDto extends BaseDto {
     @ApiModelProperty(value = "First Name", required = true)
     private String firstName;

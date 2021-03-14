@@ -1,16 +1,12 @@
 package com.kolhis.ecommerce.controller.base;
 
 import com.kolhis.ecommerce.entity.BaseEntity;
+import com.kolhis.ecommerce.entity.dto.UsersDto;
 import com.kolhis.ecommerce.repository.BaseDto;
-import org.springframework.core.io.InputStreamResource;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
 
 import javax.validation.Valid;
-import java.io.ByteArrayInputStream;
 import java.io.Serializable;
 
 @Component

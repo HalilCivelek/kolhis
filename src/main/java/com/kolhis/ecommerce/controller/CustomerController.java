@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping(CustomerController.END_POINT)
-@Api(value = "Config Controller", description = "config ile alakali adresleri besler")
+@Api(value = "Customer Controller", description = "Customer ile alakali adresleri besler")
 public class CustomerController extends AbstractEntityController<CustomerDto, Customer, Long> {
 
     static final String END_POINT = "/api/customer";

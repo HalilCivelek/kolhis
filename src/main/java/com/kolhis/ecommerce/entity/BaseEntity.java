@@ -19,6 +19,8 @@ public abstract class BaseEntity implements Serializable {
     @Column
     protected Long id;
 
+    protected Boolean status;
+
   /*  @Column(
             name = "created_date",
             nullable = false
