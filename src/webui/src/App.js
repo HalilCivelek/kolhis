@@ -26,6 +26,7 @@ import {PanelDemo} from './components/PanelDemo';
 import {TableDemo} from './components/TableDemo';
 import {TreeDemo} from './components/TreeDemo';
 import {InvalidStateDemo} from './components/InvalidStateDemo';
+import {User} from './components/User';
 
 import {Calendar} from './pages/Calendar';
 import {Crud} from './pages/Crud';
@@ -170,7 +171,8 @@ const App = () => {
                 {label: 'Crud', icon: 'pi pi-fw pi-user-edit', to: '/crud'},
                 {label: 'Calendar', icon: 'pi pi-fw pi-calendar-plus', to: '/calendar'},
                 {label: 'Timeline', icon: 'pi pi-fw pi-calendar', to: '/timeline'},
-                {label: 'Empty Page', icon: 'pi pi-fw pi-circle-off', to: '/empty'}
+                {label: 'Empty Page', icon: 'pi pi-fw pi-circle-off', to: '/empty'},
+                {label: 'User', icon: 'pi pi-fw pi-circle-off', to: '/user'}
             ]
         },
         {
@@ -325,6 +327,7 @@ const App = () => {
                 <Route path="/crud" component={Crud}/>
                 <Route path="/empty" component={EmptyPage}/>
                 <Route path="/documentation" component={Documentation}/>
+                <Route path="/user" component={User}/>
             </div>
 
             <AppFooter/>

@@ -28,7 +28,7 @@ public class UsersDto extends BaseDto {
     @ApiModelProperty(value = "password", required = true)
     private String password;
 
-    @ApiModelProperty(value = "user type", required = true)
+	@ApiModelProperty(value = "user type")
     private UserType userType;
 
     private List<AddressDto> address ;
